@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div#char-import
+    select#region
+        option(value='us') US
+        option(value='eu') EU
+    input#char-name(type='text')
+    input#realm(type='text')
