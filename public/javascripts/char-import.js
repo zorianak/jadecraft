@@ -11,33 +11,39 @@ function importChar(region, char, realm) {
         jsonpCallback: 'callback',
         type: 'GET',
         success: function (data) {
-            // so now we want to assign these to charObj
-            charObj["name"] = data["name"];
-            charObj["realm"] = data["realm"];
-            charObj["race"] = data["race"];
-
-            // now the real stats!
-            charObj["agi"] = data["stats"]["agi"];
-            charObj["str"] = data["stats"]["str"];
-            charObj["ap"] = data["stats"]["attackPower"];
-            charObj["crit"] = data["stats"]["critRating"];
-            charObj["mastery"] = data["stats"]["masteryRating"];
-            charObj["haste"] = data["stats"]["hasteRating"];
-            // 6.0 stats?
-            //charObj["versatility"] = data["stats"]["versatilityRating"];
-            charObj["Mdps"] = data["stats"]["mainHandDmgMax"];
-            charObj["mdps"] = data["stats"]["mainHandDmgMin"];
-            charObj["mhs"] = data["stats"]["mainHandSpeed"]
-            charObj["ohdps"] = data["stats"]["offHandDmgMin"];
-            charObj["Ohdps"] = data["stats"]["offHandDmgMax"];
-            charObj["ohs"] = data["stats"]["offHandSpeed"];
-
-
-            console.log(charObj["agi"]);
+            console.log('Done fetching!');
         }
-    });
+    }).done(function(data) {
+        // so now we want to assign these to charObj
+        charObj["name"] = data["name"];
+        charObj["realm"] = data["realm"];
+        charObj["race"] = data["race"];
 
-    // Charsheet will have everything nicely packaged into a new object
-    // from the API's return.
-    return charObj;
+        // now the real stats!
+        charObj["agi"] = data["stats"]["agi"];
+        charObj["str"] = data["stats"]["str"];
+        charObj["ap"] = data["stats"]["attackPower"];
+        charObj["crit"] = data["stats"]["critRating"];
+        charObj["mastery"] = data["stats"]["masteryRating"];
+        charObj["haste"] = data["stats"]["hasteRating"];
+        // 6.0 stats?
+        //charObj["versatility"] = data["stats"]["versatilityRating"];
+        charObj["Mdps"] = data["stats"]["mainHandDmgMax"];
+        charObj["mdps"] = data["stats"]["mainHandDmgMin"];
+        charObj["mhs"] = data["stats"]["mainHandSpeed"]
+        charObj["ohdps"] = data["stats"]["offHandDmgMin"];
+        charObj["Ohdps"] = data["stats"]["offHandDmgMax"];
+        charObj["ohs"] = data["stats"]["offHandSpeed"];
+
+
+        console.log(charObj["agi"]);
+
+        // Charsheet will have everything nicely packaged into a new object
+        // from the API's return.
+        populateCharacter(charObj);
+    });
+}
+
+function populateCharacter(charObj) {
+    console.log('Hello! My name is ' + charObj["name"] + ' and I have ' + charObj["agi"] + ' agility!');
 }
