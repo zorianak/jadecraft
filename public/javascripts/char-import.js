@@ -42,6 +42,7 @@ function importChar(region, char, realm) {
         // Charsheet will have everything nicely packaged into a new object
         // from the API's return.
         populateCharacter(charObj);
+        initSpells();
     });
 }
 
