@@ -38,8 +38,6 @@ function importChar(region, char, realm) {
         charObj["Ohdps"] = data["stats"]["offHandDmgMax"];
         charObj["ohs"] = data["stats"]["offHandSpeed"];
 
-        charObj["Mainhand Dps"] = data["stats"][""];
-
 
         console.log(charObj["Agility"]);
 

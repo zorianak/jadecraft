@@ -12,7 +12,7 @@ function initSpells(charObj) {
         if(charObj.ohdps === 0) {
             var damage = ((charObj["Mdps"] + charObj["mdps"]) /2) / charObj["mhs"];
         } else {
-            var mhs = charObj["mhs"] * (1+((13059/425) * 0.01));
+            var mhs = charObj["mhs"] * (1+((charObj["Haste"]/425) * 0.01));
             var damage = (((charObj["Mdps"] + charObj["mdps"]) /2) / mhs) + .5*(((charObj["Ohdps"] + charObj["ohdps"]) /2) / charObj["ohs"]);
 //            var damage = (((26397 + 14213) /2) / mhs) + .5*(((charObj["Ohdps"] + charObj["ohdps"]) /2) / charObj["ohs"]);
 
