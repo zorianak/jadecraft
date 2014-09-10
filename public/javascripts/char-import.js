@@ -3,7 +3,8 @@ function importChar(region, char, realm) {
     var url = 'https://' + region + '.battle.net' +'/api/wow/character/' + realm + '/' + char;
     var statsUrl = url + '?fields=stats&locale=en_US&jsonp=callback&apikey=fbgams9zxkqsezwqaavxxk9u8rkvxxkn';
 
-    var charObj = {};
+    //!! alert alert! Using global namespace!!!
+    charObj = {};
     
     $.ajax({
         url: statsUrl,
@@ -57,7 +58,6 @@ function populateCharacter(charObj) {
     //populate stats
     // so I'm going to loop through all, and if the key matches name, I'm gonna skip it
     $.each( charObj, function(key, value){
-        console.log('cat');
         if( key != "name" && key != "realm" && key != "race") {
             statsRowTemplate += '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
         }

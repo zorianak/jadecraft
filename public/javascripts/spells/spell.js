@@ -7,14 +7,13 @@ HUGE shoutout to Gahddo for helping with spell formula and
 other explanations for this shiznap.
 
 ***************************************************************/
-function spell(school, coefficient, mhdps, avgWDps, ap, ifTp, stance, minWdps, maxWdps){
+function spell(school, coefficient, mhdps, ap, ifTp, stance){
     this.school = school;
     this.estimate = estimate;
     this.coefficient = coefficient;
+    //!!! Defined in a global constant!!
     this.avgWdps = avgWDps;
     this.stance = stance;
-    this.minWdps = minWdps
-    this.maxWdps = maxWdps;
     
     if (this.school = physical) {
             if(ifTp){
@@ -30,26 +29,13 @@ function spell(school, coefficient, mhdps, avgWDps, ap, ifTp, stance, minWdps, m
 }
 
 spell.prototype = {
-    twoHandDamage: function(coefficient, stance, ap, avgWdps, armor) {
-    // credit to Gahddo
-        var damage = coefficient * stance * ( (( avgWdps ) / 2 ) + ( ap / 3.5 ) );
-        
-        if(armor) {
-            return damage * armor;
-        } else{
-            return damage;
-        }
-    },
     
-    dwDamage: function(coefficient, stance, ap, minWdps, maxWdps, armor){
-        // more Gahddo creddit
-        var dwMod = 0.898882275;
-        var damage = coefficient * stance * ( ((( minWdps * 0.5 ) + ( maxWdps * 0.5 ) ) / 2 ) *  dwMod + ( ap / 3.5 ) );
-    
-        if(armor) {
-            return damage * armor;
-        } else{
-            return damage;
+    damage: function(coefficient, stance, ap, armor {
+        if (charObj.ohdps == 0) {
+            var dwMod = 1;
+        } else {
+            var dwMod = 0.898882;
         }
+        var dmg = coefficient * stance * (( this.avgWdps / 2 ) * dwMod) + (ap/3.5);              
     }
 }
