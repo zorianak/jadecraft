@@ -5,6 +5,8 @@ function importChar(region, char, realm) {
 
     //!! alert alert! Using global namespace!!!
     charObj = {};
+
+    console.log(statsUrl);
     
     $.ajax({
         url: statsUrl,
@@ -31,10 +33,12 @@ function importChar(region, char, realm) {
         //charObj["versatility"] = data["stats"]["versatilityRating"];
         charObj["Mdps"] = data["stats"]["mainHandDmgMax"];
         charObj["mdps"] = data["stats"]["mainHandDmgMin"];
-        charObj["mhs"] = data["stats"]["mainHandSpeed"]
+        charObj["mhs"] = data["stats"]["mainHandSpeed"];
         charObj["ohdps"] = data["stats"]["offHandDmgMin"];
         charObj["Ohdps"] = data["stats"]["offHandDmgMax"];
         charObj["ohs"] = data["stats"]["offHandSpeed"];
+
+        charObj["Mainhand Dps"] = data["stats"][""];
 
 
         console.log(charObj["Agility"]);
@@ -42,7 +46,7 @@ function importChar(region, char, realm) {
         // Charsheet will have everything nicely packaged into a new object
         // from the API's return.
         populateCharacter(charObj);
-        initSpells();
+        initSpells(charObj);
     });
 }
 

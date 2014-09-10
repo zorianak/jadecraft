@@ -1,4 +1,5 @@
-function initSpells() {
+function initSpells(charObj) {
+    console.log(charObj)
     
     /****************************************************
 
@@ -7,13 +8,17 @@ function initSpells() {
     ****************************************************/
 
     avgWdps = function(){
+        console.log('Mhdps ' + charObj["Mdps"]);
         if(charObj.ohdps === 0) {
-            var damage = 300.4;
+            var damage = ((charObj["Mdps"] + charObj["mdps"]) /2) / charObj["mhs"];
         } else {
-            var damage = 350.1;
+            var mhs = charObj["mhs"] * (1+((13059/425) * 0.01));
+            var damage = (((charObj["Mdps"] + charObj["mdps"]) /2) / mhs) + .5*(((charObj["Ohdps"] + charObj["ohdps"]) /2) / charObj["ohs"]);
+//            var damage = (((26397 + 14213) /2) / mhs) + .5*(((charObj["Ohdps"] + charObj["ohdps"]) /2) / charObj["ohs"]);
+
         }
 
-        console.log(damage);
+        console.log('avgWdps ' + damage);
 
         return damage;
     }
@@ -27,13 +32,14 @@ function initSpells() {
     // most spells aren't that special and don't need their own logic
     tigerpalm = new spell('physical', 3, ap, ifTp, stance, avgWdps());
 //    jab = new spell('physical', 1.15, ap, ifTp, stance, avgWdps());
-//    rsk = new spell('physical', 8, ap, ifTp, stance, avgWdps());
+    rsk = new spell('physical', 14.4, ap, ifTp, stance, avgWdps());
 //    expelHarm = new spell('nature', 0.6, ap, ifTp, stance, avgWdps());
 //    hurricaneStrike = new spell('physical', 2, ap, ifTp, stance, avgWdps());
     
     function test() {
-        var dmg = tigerpalm.damage();
+        var tpdmg = tigerpalm.damage();
+        var rskdmg = rsk.damage();
         
-        console.log('test ' + dmg);
+        console.log('test ' + tpdmg + ', ' + rskdmg);
     }test();
 }
