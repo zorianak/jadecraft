@@ -1,0 +1,1 @@
+var blackoutkick = new spell(physical, 5.375, mhdps, avgWDps, ap, ifTp, stance, minWdps, maxWdps);
