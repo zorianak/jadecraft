@@ -3,7 +3,7 @@ function importChar(region, char, realm) {
     var url = 'https://' + region + '.battle.net' +'/api/wow/character/' + realm + '/' + char;
     var statsUrl = url + '?fields=stats&locale=en_US&jsonp=callback&apikey=fbgams9zxkqsezwqaavxxk9u8rkvxxkn';
 
-    var charObj = [];
+    var charObj = {};
     
     $.ajax({
         url: statsUrl,
@@ -20,12 +20,12 @@ function importChar(region, char, realm) {
         charObj["race"] = data["race"];
 
         // now the real stats!
-        charObj["agi"] = data["stats"]["agi"];
-        charObj["str"] = data["stats"]["str"];
-        charObj["ap"] = data["stats"]["attackPower"];
-        charObj["crit"] = data["stats"]["critRating"];
-        charObj["mastery"] = data["stats"]["masteryRating"];
-        charObj["haste"] = data["stats"]["hasteRating"];
+        charObj["Agility"] = data["stats"]["agi"];
+        charObj["Strength"] = data["stats"]["str"];
+        charObj["Attack Power"] = data["stats"]["attackPower"];
+        charObj["Crit"] = data["stats"]["critRating"];
+        charObj["Mastery"] = data["stats"]["masteryRating"];
+        charObj["Haste"] = data["stats"]["hasteRating"];
         // 6.0 stats?
         //charObj["versatility"] = data["stats"]["versatilityRating"];
         charObj["Mdps"] = data["stats"]["mainHandDmgMax"];
@@ -36,7 +36,7 @@ function importChar(region, char, realm) {
         charObj["ohs"] = data["stats"]["offHandSpeed"];
 
 
-        console.log(charObj["agi"]);
+        console.log(charObj["Agility"]);
 
         // Charsheet will have everything nicely packaged into a new object
         // from the API's return.
@@ -45,5 +45,24 @@ function importChar(region, char, realm) {
 }
 
 function populateCharacter(charObj) {
-    console.log('Hello! My name is ' + charObj["name"] + ' and I have ' + charObj["agi"] + ' agility!');
+    console.log('Hello! My name is ' + charObj["name"] + ' and I have ' + charObj["Agility"] + ' agility!');
+
+    var basicsTab = $('#char-basics-table');
+    var statsTab = $('#char-sum-table');
+    var statsRowTemplate = '';
+
+    // populate basics
+    $('#charName').text(charObj["name"]);
+
+    //populate stats
+    // so I'm going to loop through all, and if the key matches name, I'm gonna skip it
+    $.each( charObj, function(key, value){
+        console.log('cat');
+        if( key != "name" && key != "realm" && key != "race") {
+            statsRowTemplate += '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
+        }
+    });
+
+    // insert into stats table
+    statsTab.html(statsRowTemplate);
 }
