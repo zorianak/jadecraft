@@ -29,7 +29,8 @@ function spell(school, coefficient, mhdps, avgWDps, ap, ifTp, stance, minWdps, m
     
 }
 
-spell.prototype.twoHandDamage = function(coefficient, stance, ap, avgWdps, armor) {
+spell.prototype = {
+    twoHandDamage: function(coefficient, stance, ap, avgWdps, armor) {
     // credit to Gahddo
         var damage = coefficient * stance * ( (( avgWdps ) / 2 ) + ( ap / 3.5 ) );
         
@@ -38,9 +39,9 @@ spell.prototype.twoHandDamage = function(coefficient, stance, ap, avgWdps, armor
         } else{
             return damage;
         }
-}
-
-spell.prototype.dwDamage = function(coefficient, stance, ap, minWdps, maxWdps, armor){
+    },
+    
+    dwDamage: function(coefficient, stance, ap, minWdps, maxWdps, armor){
         // more Gahddo creddit
         var dwMod = 0.898882275;
         var damage = coefficient * stance * ( ((( minWdps * 0.5 ) + ( maxWdps * 0.5 ) ) / 2 ) *  dwMod + ( ap / 3.5 ) );
@@ -51,3 +52,4 @@ spell.prototype.dwDamage = function(coefficient, stance, ap, minWdps, maxWdps, a
             return damage;
         }
     }
+}
