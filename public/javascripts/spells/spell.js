@@ -36,6 +36,6 @@ spell.prototype = {
         } else {
             var dwMod = 0.898882;
         }
-        var dmg = coefficient * stance * (( this.avgWdps / 2 ) * dwMod) + (ap/3.5);              
+        var dmg = coefficient * stance * ( this.avgWdps * dwMod) + (ap/3.5);              
     }
 }
