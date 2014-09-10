@@ -11,9 +11,10 @@ function spellBase(school, coefficient, mhdps, avgWDps, ap, ifTp, stance, minWdp
     this.school = school;
     this.estimate = estimate;
     this.coefficient = coefficient;
-    this.avgWdps = avgWDps
+    this.avgWdps = avgWDps;
     this.stance = stance;
     this.minWdps = minWdps
+    this.maxWdps = maxWdps;
     
     if (this.school = physical) {
             if(ifTp){
@@ -30,14 +31,21 @@ function spellBase(school, coefficient, mhdps, avgWDps, ap, ifTp, stance, minWdp
         // credit to Gahddo
         var damage = this.coefficient * this.stance * ( (( avgWdps ) / 2 ) + ( ap / 3.5 ) );
         
-        return damage * armor;
+        if(armor) {
+            return damage * armor;
+        } else{
+            return damage;
+        }
     }
     
     this.dwDamage = function(){
         // more Gahddo creddit
         var dwMod = 0.898882275;
-        var damage = this.coefficient * 1.1 * ( ((( this.minWdps * 0.5 ) + ( this.maxWdps * 0.5 ) ) / 2 ) *  dwMod + ( ap / 3.5 ) );
-        
-        return damage * armor;
+        var damage = this.coefficient * this.stance * ( ((( this.minWdps * 0.5 ) + ( this.maxWdps * 0.5 ) ) / 2 ) *  dwMod + ( ap / 3.5 ) );
+        if(armor) {
+            return damage * armor;
+        } else{
+            return damage;
+        }
     }
 }
