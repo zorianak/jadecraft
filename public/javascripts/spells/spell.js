@@ -39,9 +39,9 @@ spell.prototype = {
             var dwMod = 0.898882;
         }
         console.log(dwMod);
-        var dmg = this.coefficient * this.stance * (this.avgWdps * dwMod) + (this.ap/3.5);
+        var dmg = this.coefficient * (this.avgWdps * dwMod + this.ap/3.5);
         if(dwMod !== 1) {
-            dmg = dmg / 1.5;
+//            dmg = dmg / 1.5;
         }
         return dmg;
     }
