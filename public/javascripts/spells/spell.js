@@ -14,6 +14,7 @@ function spell(school, coefficient, ap, ifTp, stance, avgWdps){
     //!!! Defined in a global constant!!
     this.avgWdps = avgWdps;
     this.stance = stance;
+    this.ap = ap;
     
     if (this.school === 'physical') {
             if(ifTp){
@@ -31,20 +32,14 @@ function spell(school, coefficient, ap, ifTp, stance, avgWdps){
 spell.prototype = {
     
     damage: function(coefficient, stance, ap, armor) {
-        console.log('cat');
-        console.log('coeff ' + coefficient);
-        console.log('stance ' + stance);
-        console.log('ap ' + ap);
-        console.log('armor ' + armor);
-        
-        console.log('ohdps ' + charObj.ohdps);
         
         if (charObj.ohdps == 0) {
             var dwMod = 1;
         } else {
             var dwMod = 0.898882;
         }
-        var dmg = coefficient * stance * ( this.avgWdps * dwMod) + (ap/3.5);
+        console.log(dwMod);
+        var dmg = this.coefficient * this.stance * (this.avgWdps * dwMod) + (this.ap/3.5);
         return dmg;
     }
 }
