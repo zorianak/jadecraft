@@ -59,7 +59,7 @@ function initSpells(charObj) {
     }
     
     // BoK crap
-    var blackoutkick = new spell('physical', 5.375, mhdps, avgWDps, ap, ifTp, stance, minWdps, maxWdps);
+    var blackoutkick = new spell('physical', 5.375, ap, ifTp, stance, avgWdps());
 
     // for the dot
 
@@ -72,7 +72,7 @@ function initSpells(charObj) {
     }
     
     // chex shit
-    var chex = new spell('nature', 0.6, mhdps, avgWDps, ap, ifTp, stance, minWdps, maxWdps);
+    var chex = new spell('nature', 0.6,ap, ifTp, stance, avgWdps());
 
     var chexDotDmg = function() {
         var chexDot = .5;
