@@ -5,6 +5,7 @@ function importChar(region, char, realm) {
 
     //!! alert alert! Using global namespace!!!
     charObj = {};
+    itemObj = {};
 
     console.log(statsUrl);
     
@@ -39,28 +40,29 @@ function importChar(region, char, realm) {
         charObj["ohs"] = data["stats"]["offHandSpeed"];
         
         // so this will handle all the gear!
-        charObj["Helm"] = data["items"]["head"];
-        charObj["Neck"] = data["items"]["neck"];
-        charObj["Shoulder"] = data["items"]["shoulder"];
-        charObj["Back"] = data["items"]["back"];
-        charObj["Chest"] = data["items"]["chest"];
-        charObj["Wrist"] = data["items"]["wrist"];
-        charObj["Hands"] = data["items"]["hands"];
-        charObj["Waist"] = data["items"]["waist"];
-        charObj["Legs"] = data["items"]["legs"];
-        charObj["Feet"] = data["items"]["feet"];
-        charObj["Finger1"] = data["items"]["finger1"];
-        charObj["Finger2"] = data["items"]["finger2"];
-        charObj["Trinket1"] = data["items"]["trinket1"];
-        charObj["Trinket2"] = data["items"]["trinket2"];
-        charObj["Mainhand"] = data["items"]["mainHand"];
-        charObj["Offhand"] = data["items"]["offHand"];
+        itemObj["Helm"] = data["items"]["head"];
+        itemObj["Neck"] = data["items"]["neck"];
+        itemObj["Shoulder"] = data["items"]["shoulder"];
+        itemObj["Back"] = data["items"]["back"];
+        itemObj["Chest"] = data["items"]["chest"];
+        itemObj["Wrist"] = data["items"]["wrist"];
+        itemObj["Hands"] = data["items"]["hands"];
+        itemObj["Waist"] = data["items"]["waist"];
+        itemObj["Legs"] = data["items"]["legs"];
+        itemObj["Feet"] = data["items"]["feet"];
+        itemObj["Finger1"] = data["items"]["finger1"];
+        itemObj["Finger2"] = data["items"]["finger2"];
+        itemObj["Trinket1"] = data["items"]["trinket1"];
+        itemObj["Trinket2"] = data["items"]["trinket2"];
+        itemObj["Mainhand"] = data["items"]["mainHand"];
+        itemObj["Offhand"] = data["items"]["offHand"];
         
-        console.log(charObj["Mainhand"]);
+        
 
 
         // Charsheet will have everything nicely packaged into a new object
         // from the API's return.
+        setAvgWdps(charObj, itemObj);
         populateCharacter(charObj);
         initSpells(charObj);
     });
