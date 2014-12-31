@@ -30,11 +30,6 @@ function initSpells(charObj) {
     // BoK crap
     var blackoutkick = new spell('physical', 5.375, ap, ifTp, stance, avgWdps, 1);
 
-    console.log('THIS WILL BREAK ALL THE THINGS I BET, HOW MUCH ARE WE BETTING??');
-    console.log('avg fof tick should be ' + fofDmg());
-    console.log('-----------------');
-    // for the dot
-
     var bokDot = .3;
 
     var bokDotDmg = function(){

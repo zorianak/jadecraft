@@ -30,6 +30,8 @@ function importChar(region, char, realm) {
         charObj["Crit"] = data["stats"]["critRating"];
         charObj["Mastery"] = data["stats"]["masteryRating"];
         charObj["Haste"] = data["stats"]["hasteRating"];
+        charObj["Versatility"] = data["stats"]["versatilityDamageDoneBonus"];
+        charObj["VersRating"] = data["stats"]["versatility"];
         // 6.0 stats?
         //charObj["versatility"] = data["stats"]["versatilityRating"];
         charObj["Mdps"] = data["stats"]["mainHandDmgMax"];

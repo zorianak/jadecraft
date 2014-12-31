@@ -17,13 +17,14 @@ function spell(school, coefficient, ap, ifTp, stance, avgWdps, cd){
     this.ap = ap;
     this.rskD = 1.1;
     this.cd = cd;
+    this.vers = new stat(charObj["VersRating"], 130);
     
     if (this.school === 'physical') {
             if(ifTp){
                 this.armor = 0.726855;
         
             } else {
-                this.armor = 1 - (1938 / (1938 + 3610));
+                this.armor = 0.6506849;
             }
             
             // from:
@@ -38,16 +39,8 @@ spell.prototype = {
     
     damage: function(coefficient, stance, ap) {
         
-        if (charObj.ohdps == 0) {
-            var dwMod = 1;
-        } else {
-            var dwMod = 0.857143;
-        }
-        console.log(this.armor);
-        var dmg = this.coefficient * (this.avgWdps + this.ap/3.5) * dwMod * this.armor * this.rskD;
-        if(dwMod !== 1) {
-//            dmg = dmg / 1.5;
-        }
+        var dmg = this.coefficient * (this.avgWdps + this.ap/3.5) * this.armor * this.rskD * this.stance * (1 + (this.vers["rating"] * .01));
+    
         return dmg;
     }
 }

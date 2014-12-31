@@ -9,4 +9,5 @@ adding this here: <gahddo> 110 crit, 100 haste, 44 mastery, 66 mult, 130 vers
 
 function stat(statRating, coefficient){
     this.rating = statRating / coefficient;
+    return this.rating;
 }
