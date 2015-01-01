@@ -18,6 +18,7 @@ function importChar(region, char, realm) {
             console.log('Done fetching!');
         }
     }).done(function(data) {
+        console.log(data);
         // so now we want to assign these to charObj
         charObj["name"] = data["name"];
         charObj["realm"] = data["realm"];
@@ -64,9 +65,9 @@ function importChar(region, char, realm) {
 
         // Charsheet will have everything nicely packaged into a new object
         // from the API's return.
-        setAvgWdps(charObj, itemObj);
-        populateCharacter(charObj);
-        initSpells(charObj);
+//        setAvgWdps(charObj, itemObj);
+//        populateCharacter(charObj);
+//        initSpells(charObj);
     });
 }
 
