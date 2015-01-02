@@ -13,8 +13,8 @@
 //}
 
 module.exports = {
-  Char: function() {
-      this.name = "Anon monk";
+  Char: function(data) {
+      this.name = data["name"] || "Anon monk";
   },
 
   escape: function(html) {

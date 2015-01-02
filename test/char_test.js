@@ -24,8 +24,12 @@ var chai = require('chai'),
 
 describe('#char', function() {
     it('should have a default name', function() {
-        var result = new Char();
+        var result = new Char({});
         expect(result.name).to.equal('Anon monk');
+    });
+    it('should assign a name', function() {
+        var result = new Char({"name": "Monk"});
+        expect(result.name).to.equal('Monk');
     });
 });
 
