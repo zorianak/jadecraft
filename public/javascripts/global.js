@@ -1,7 +1,11 @@
 $(document).ready(function(){
 
-    var getChar = importChar('us', 'Caligraphy', "Windrunner");
-    console.log(getChar);
+    function getChar() {
+        importChar('US', 'Caligraphy', 'Windrunner', function(data) {
+            var theChar = data;
+            return theChar;
+        });
+    }
 
     // test for TP to be active - yes globalized
     ifTp = $('#ifTp').val();

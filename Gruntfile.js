@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           globals: ['should'],
           timeout: 3000,
           ignoreLeaks: false,
-          grep: '*-test',
+          grep: '*_test',
           ui: 'bdd',
           reporter: 'tap'
         },
