@@ -15,7 +15,8 @@
 module.exports = {
   Char: function(data) {
 
-    var stats = data["stats"] || {};
+    var stats = data["stats"] || {},
+        items = data["item"] || {};
     this.name = data["name"] || "Anon monk";
 
     // NOW TO INPUT ALL THE THINGS
@@ -23,7 +24,7 @@ module.exports = {
     this.race = data["race"] || "No race";
 
     // now the real stats!
-    this.Agility = stats["agi"] || "0";
+    this.Agility = stats["agi"] || 0;
     this.Strength = stats["str"] || 0;
     this.AP = stats["attackPower"] || 0;
     this.Crit = stats["critRating"] || 0;
@@ -32,30 +33,30 @@ module.exports = {
     this.Versatility = stats["versatilityDamageDoneBonus"] || 0;
     this.VersRating = stats["versatility"] || 0;
 //    // 6.0 stats?
-//    //charObj["versatility"] = data["stats"]["versatilityRating"];
-//    this.Mdps = data["stats"]["mainHandDmgMax"] || 0;
-//    this.mdps = data["stats"]["mainHandDmgMin"] || 0;
-//    this.mhs = data["stats"]["mainHandSpeed"] || 0;
-//    this.ohdps = data["stats"]["offHandDmgMin"] || 0;
-//    this.Ohdps = data["stats"]["offHandDmgMax"] || 0;
-//    this.ohs = data["stats"]["offHandSpeed"] || 0;
-//
+    //charObj["versatility"] = data["stats"]["versatilityRating"];
+    this.Mdps = stats["mainHandDmgMax"] || 0;
+    this.mdps = stats["mainHandDmgMin"] || 0;
+    this.mhs = stats["mainHandSpeed"] || 0;
+    this.ohdps = stats["offHandDmgMin"] || 0;
+    this.Ohdps = stats["offHandDmgMax"] || 0;
+    this.ohs = stats["offHandSpeed"] || 0;
+
 //    // so this will handle all the gear!
-//    this.Helm = data["items"]["head"] || 0;
-//    this.Neck = data["items"]["neck"] || 0;
-//    this.Shoulder = data["items"]["shoulder"] || 0;
-//    this.Back = data["items"]["back"] || 0;
-//    this.Chest = data["items"]["chest"] || 0;
-//    this.Wrist = data["items"]["wrist"] || 0;
-//    this.Hands = data["items"]["hands"] || 0;
-//    this.Waist = data["items"]["waist"] || 0;
-//    this.Legs = data["items"]["legs"] || 0;
-//    this.Feet = data["items"]["feet"] || 0;
-//    this.Finger1 = data["items"]["finger1"] || 0;
-//    this.Finger2 = data["items"]["finger2"] || 0;
-//    this.Trinket1 = data["items"]["trinket1"] || 0;
-//    this.Trinket2 = data["items"]["trinket2"] || 0;
-//    this.Mainhand = data["items"]["mainHand"] || 0;
-//    this.Offhand = data["items"]["offHand"] || 0;
+    this.Helm = items["head"] || 0;
+    this.Neck = items["neck"] || 0;
+    this.Shoulder = items["shoulder"] || 0;
+    this.Back = items["back"] || 0;
+    this.Chest = items["chest"] || 0;
+    this.Wrist = items["wrist"] || 0;
+    this.Hands = items["hands"] || 0;
+    this.Waist = items["waist"] || 0;
+    this.Legs = items["legs"] || 0;
+    this.Feet = items["feet"] || 0;
+    this.Finger1 = items["finger1"] || 0;
+    this.Finger2 = items["finger2"] || 0;
+    this.Trinket1 = items["trinket1"] || 0;
+    this.Trinket2 = items["trinket2"] || 0;
+    this.Mainhand = items["mainHand"] || 0;
+    this.Offhand = items["offHand"] || 0;
   }
 };

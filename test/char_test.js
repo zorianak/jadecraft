@@ -17,4 +17,8 @@ describe('#char', function() {
         var result = new Char({"name": "Monk"});
         expect(result.name).to.equal('Monk');
     });
+    it('should assign defaults to stats', function() {
+       var result = new Char({});
+       expect(result.Agiltiy).to.equal('1');
+    });
 });
