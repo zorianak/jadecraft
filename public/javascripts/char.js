@@ -16,7 +16,7 @@ module.exports = {
   Char: function(data) {
 
     var stats = data["stats"] || {},
-        items = data["item"] || {};
+        items = data["items"] || {};
     this.name = data["name"] || "Anon monk";
 
     // NOW TO INPUT ALL THE THINGS
@@ -42,21 +42,21 @@ module.exports = {
     this.ohs = stats["offHandSpeed"] || 0;
 
 //    // so this will handle all the gear!
-    this.Helm = items["head"] || 0;
-    this.Neck = items["neck"] || 0;
-    this.Shoulder = items["shoulder"] || 0;
-    this.Back = items["back"] || 0;
-    this.Chest = items["chest"] || 0;
-    this.Wrist = items["wrist"] || 0;
-    this.Hands = items["hands"] || 0;
-    this.Waist = items["waist"] || 0;
-    this.Legs = items["legs"] || 0;
-    this.Feet = items["feet"] || 0;
-    this.Finger1 = items["finger1"] || 0;
-    this.Finger2 = items["finger2"] || 0;
-    this.Trinket1 = items["trinket1"] || 0;
-    this.Trinket2 = items["trinket2"] || 0;
-    this.Mainhand = items["mainHand"] || 0;
-    this.Offhand = items["offHand"] || 0;
+    this.Helm = items["head"] || 'No Item';
+    this.Neck = items["neck"] || 'No Item';
+    this.Shoulder = items["shoulder"] || 'No Item';
+    this.Back = items["back"] || 'No Item';
+    this.Chest = items["chest"] || 'No Item';
+    this.Wrist = items["wrist"] || 'No Item';
+    this.Hands = items["hands"] || 'No Item';
+    this.Waist = items["waist"] || 'No Item';
+    this.Legs = items["legs"] || 'No Item';
+    this.Feet = items["feet"] || 'No Item';
+    this.Finger1 = items["finger1"] || 'No Item';
+    this.Finger2 = items["finger2"] || 'No Item';
+    this.Trinket1 = items["trinket1"] || 'No Item';
+    this.Trinket2 = items["trinket2"] || 'No Item';
+    this.Mainhand = items["mainHand"] || 'No Item';
+    this.Offhand = items["offHand"] || 'No Item';
   }
 };

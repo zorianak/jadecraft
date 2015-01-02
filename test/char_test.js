@@ -17,8 +17,20 @@ describe('#char', function() {
         var result = new Char({"name": "Monk"});
         expect(result.name).to.equal('Monk');
     });
-    it('should assign defaults to stats', function() {
+    it('should assign default stats', function() {
        var result = new Char({});
-       expect(result.Agiltiy).to.equal('1');
+       expect(result.Agility).to.equal(0);
+    });
+    it('should assign stats', function() {
+       var result = new Char({"stats":{"agi":1}});
+       expect(result.Agility).to.equal(1);
+    });
+    it('should assign no item', function() {
+        var result = new Char({});
+        expect(result.Back).to.equal('No Item');
+    });
+    it('should assign items', function() {
+        var result = new Char({"items":{"back":"Rawr"}});
+        expect(result.Back).to.equal('Rawr');
     });
 });
