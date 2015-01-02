@@ -15,21 +15,24 @@
     "armory"
   ],
   "author": "Kim Holmes <jadecraft@kimiscool.me>",
-    "dependencies": {
-        "express": "~4.0.0",
-        "static-favicon": "~1.0.0",
-        "morgan": "~1.0.0",
-        "cookie-parser": "~1.0.1",
-        "body-parser": "~1.0.0",
-        "debug": "~0.7.4",
-        "jade": "~1.3.0",
-        "mongodb": "*",
-        "mongoskin": "*",
-        "chai": "^1.10.0",
-        "grunt": "^0.4.5",
-        "grunt-contrib-jshint": "^0.10.0",
-        "grunt-simple-mocha": "^0.4.0",
-        "mocha": "^2.1.0",
-        "sinon": "^1.12.2"
-    }
+  "dependencies": {
+    "express": "~4.0.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0",
+    "mongodb": "*",
+    "mongoskin": "*",
+    "chai": "^1.10.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-simple-mocha": "^0.4.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  },
+  "devDependencies": {
+    "grunt-mocha": "^0.4.11"
+  }
 }

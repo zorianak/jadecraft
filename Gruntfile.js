@@ -11,7 +11,7 @@ module.exports = function(grunt) {
           ignoreLeaks: false,
           grep: '*_test',
           ui: 'bdd',
-          reporter: 'tap'
+          reporter: 'Nyan'
         },
 
         all: { src: 'test/**/*.js' }
