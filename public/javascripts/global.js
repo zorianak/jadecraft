@@ -27,7 +27,7 @@ $(document).ready(function(){
     var fof = new Jadec.spell('physical', 7.755, charStats, ifTp, 1.1, 25);
 
     var fofDmg = function() {
-        var ticks = 1;
+        var ticks = 5;
         var damage = fof.damage() * ticks;
 
         return damage;
