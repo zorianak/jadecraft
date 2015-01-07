@@ -4,11 +4,11 @@ block content
   h1 #{theChar.name}
   
   div#char-summary
-    input#ifTp(type="checkbox")
+    input#ifTp(type="checkbox",checked)
     label#tpLabel(for="ifTp") Activate Tiger Power
     
-    input#fightLength(type="number")
-    label#fightLenLable(for="fightLength",value="6") Fight Length (minutes)
+    input#fightLength(type="number",value="6")
+    label#fightLenLable(for="fightLength") Fight Length (minutes)
 
     table#char-basics-table
         th#charName
@@ -45,12 +45,11 @@ block content
             td.attrName Offhand DPS
             td#VersRating.attrStat #{theChar.Offhand.weaponInfo.dps}
             
+    table#output-results
+            
   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-  script(src='/javascripts/vendor/require.js')
   script(src='/javascripts/stats/avgWdps.js')
   script(src='/javascripts/stats/stat.js')
-  script(src='/javascripts/char-import.js')
-  script(src='/javascripts/char.js')
   script(src='/javascripts/global.js')
   
   script(src='/javascripts/spells/spell.js')

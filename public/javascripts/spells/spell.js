@@ -3,9 +3,6 @@
 This is the base spell object. This is what all other spells 
 inherit from.
 
-HUGE shoutout to Gahddo for helping with spell formula and
-other explanations for this shiznap.
-
 ***************************************************************/
 function spell(school, coefficient, ap, ifTp, stance, avgWdps, cd){
     this.school = school;
