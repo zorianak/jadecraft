@@ -13,9 +13,37 @@ block content
     table#char-basics-table
         th#charName
         tr
-            td Realm
-            td#realm
-    table#char-sum-table
+            td.attrName Realm
+            td#realm.attrStat #{theChar.realm}
+
+    table#char-stat-table
+        tr
+            td.attrName Agility
+            td#Agility.attrStat #{theChar.Agility}
+        tr
+            td.attrName Strength
+            td#Strength.attrStat #{theChar.Strength}
+        tr
+            td.attrName AP
+            td#AP.attrStat #{theChar.AP}
+        tr
+            td.attrName Crit
+            td#Crit.attrStat #{theChar.Crit}
+        tr
+            td.attrName Mastery
+            td#Mastery.attrStat #{theChar.Mastery}
+        tr
+            td.attrName Haste
+            td#Haste.attrStat #{theChar.Haste}
+        tr
+            td.attrName VersRating
+            td#VersRating.attrStat #{theChar.VersRating}
+        tr
+            td.attrName Mainhand DPS
+            td#VersRating.attrStat #{theChar.Mainhand.weaponInfo.dps}
+        tr
+            td.attrName Offhand DPS
+            td#VersRating.attrStat #{theChar.Offhand.weaponInfo.dps}
             
   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
   script(src='/javascripts/vendor/require.js')
