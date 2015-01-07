@@ -8,12 +8,13 @@ var express = require('express'),
 // to import my monk
 
 importChar('US', 'Caligraphy', 'Windrunner', function(data) {
-    var theChar = new Char(data);
 
     // now send them to the page?
     /* GET chars listing. */
     router.get('/', function(req, res) {
-      res.render('char', { title: theChar.name });
+      var theChar = new Char(data);
+      console.log(theChar);
+      res.render('char', { "theChar": theChar });
     });
 });
 
