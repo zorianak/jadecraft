@@ -1,4 +1,3 @@
-var Jadec = Jadec || {};
 /***************************************************************
 
 This is the base spell object. This is what all other spells 
@@ -6,19 +5,19 @@ inherit from.
 
 ***************************************************************/
 
-Jadec.spell = {
+Jadec = (function(){
     
-    spell: function(school, coefficient, ap, ifTp, stance, avgWdps, cd){
+    var spell= function(school, coefficient, charStats, ifTp, stance, cd){
         this.school = school;
     //    this.estimate = estimate;
         this.coefficient = coefficient;
         //!!! Defined in a global constant!!
-        this.avgWdps = avgWdps;
+        this.avgWdps = charStats["avgWdps"];
         this.stance = stance;
-        this.ap = ap;
+        this.ap = charStats["AP"];
         this.rskD = 1.1;
         this.cd = cd;
-        this.vers = new stat(charObj["VersRating"], 130);
+        this.vers = new stat(charStats["VersRating"], 130);
 
         if (this.school === 'physical') {
                 if(ifTp){
@@ -33,15 +32,17 @@ Jadec.spell = {
             } else {
                 this.armor = 1;
             }
-    }
-
+    };
     spell.prototype = {
-
         damage: function(coefficient, stance, ap) {
-
             var dmg = this.coefficient * (this.avgWdps + this.ap/3.5) * this.armor * this.rskD * this.stance * (1 + (this.vers["rating"] * .01));
-
+            console.log(this.coefficient);
             return dmg;
         }
+    };
+    return {
+        spell: spell
     }
-}
+
+})();
+

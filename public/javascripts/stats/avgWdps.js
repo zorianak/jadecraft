@@ -6,16 +6,14 @@ access it later.
 
 /*******************************/
 
-var setAvgWdps = function(charObj, itemObj){ 
-    var mhavgDps = itemObj["Mainhand"]["weaponInfo"]["dps"];
-    var ohavgDps = itemObj["Offhand"]["weaponInfo"]["dps"];
-    var dwMod = 0;
+var setAvgWdps = function(mhDPs, ohDps){
+    var dwMod = 1;
     
-    if(ohavgDps !== 0 ) {
+    if(ohDps !== 0 ) {
         dwMod = 0.857143;
     }
+    console.log(mhDPs);
+    var damage = (parseFloat(mhDPs) + parseFloat(ohDps)/2) * dwMod;
     
-    var damage = (mhavgDps + ohavgDps/2) * dwMod;
-    
-    charObj["avgWdps"] = damage;
+    return damage;
 }

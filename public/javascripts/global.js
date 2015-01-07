@@ -17,9 +17,22 @@ $(document).ready(function(){
         charStats[attribute] = attrRating;
     });
 
+    // set avgWdps (used a lot!)
+    charStats["avgWdps"] = setAvgWdps(charStats["Mainhand DPS"], charStats["Offhand DPS"]);
+
     // for now we're also going to add some of the
     // weapon information into the tables, so that
     // we can more easily get the wDPS
 
+    var fof = new Jadec.spell('physical', 7.755, charStats, ifTp, 1.1, 25);
+
+    var fofDmg = function() {
+        var ticks = 1;
+        var damage = fof.damage() * ticks;
+
+        return damage;
+    }
+
     console.log(charStats);
+    console.log(fofDmg());
 });
