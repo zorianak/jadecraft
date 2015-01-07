@@ -1,3 +1,7 @@
+var Jadec = Jadec || {};
+var Jadec.spell = Jadec.spell || {};
+
+
 function initSpells(charObj) {
     
     /****************************************************
