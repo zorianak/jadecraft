@@ -1,5 +1,17 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'),
+    router = express.Router(),
+    npmarmory = require('npmarmory'),
+    importChar = npmarmory.importChar,
+    Char = npmarmory.Char;
+
+// let's see if we can break node here.  ._. prelim logic
+// to import my monk
+
+importChar('US', 'Caligraphy', 'Windrunner', function(data) {
+    var theChar = data;
+    console.log(theChar);
+//    return theChar;
+});
 
 /* GET chars listing. */
 router.get('/', function(req, res) {
