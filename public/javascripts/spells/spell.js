@@ -1,10 +1,12 @@
+var Jadec = Jadec || {};
 /***************************************************************
 
 This is the base spell object. This is what all other spells 
 inherit from.
 
 ***************************************************************/
-function spell(school, coefficient, ap, ifTp, stance, avgWdps, cd){
+
+Jadec.protoype.spell = function(school, coefficient, ap, ifTp, stance, avgWdps, cd){
     this.school = school;
 //    this.estimate = estimate;
     this.coefficient = coefficient;
