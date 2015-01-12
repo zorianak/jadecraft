@@ -33,6 +33,6 @@ $(document).ready(function(){
         return damage;
     }
 
+    console.log((charStats["Haste"]/1000) + 10.00);
     console.log(charStats);
-    console.log(fofDmg());
 });

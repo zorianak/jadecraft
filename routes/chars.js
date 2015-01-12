@@ -13,7 +13,6 @@ importChar('US', 'Caligraphy', 'Windrunner', function(data) {
     /* GET chars listing. */
     router.get('/', function(req, res) {
       var theChar = new Char(data);
-      console.log(theChar);
       res.render('char', { "theChar": theChar });
     });
 });
