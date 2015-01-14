@@ -34,3 +34,7 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+/node_modules/.bin/grunt-simple-mocha
+/node_modules/.bin/grunt-simple-mocha.cmd
+/node_modules/.bin/mocha
+/node_modules/.bin/mocha.cmd
