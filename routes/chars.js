@@ -5,9 +5,9 @@ var express = require('express'),
     Char = npmarmory.Char;
 
 // defaults
-var jadeRegionDefault = "US";
-var jadeNameDefault = "Caligraphy";
-var jadeRealmDefault = "Windrunner";
+var jadeRegionDefault = "US",
+  jadeNameDefault = "Caligraphy",
+  jadeRealmDefault = "Windrunner";
 
 // pre-declare empty so we know where values came from
 var jadeRegion, jadeName, jadeRealm;
