@@ -46,9 +46,15 @@ block content
             td#VersRating.attrStat #{theChar.Mainhand.weaponInfo.dps}
         tr
             td.attrName Offhand DPS
-            td#VersRating.attrStat #{theChar.Offhand.weaponInfo.dps}
+            td#VersRating.attrStat #{theChar.Mainhand.weaponInfo.dps} 
             
     table#output-results
+
+    p Had to break OffHand since some Monks dont have that.
+
+    p #{theChar.jadeRegion}
+    p #{theChar.jadeName}
+    p #{theChar.jadeRealm}
             
   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
   script(src='/javascripts/stats/avgWdps.js')
