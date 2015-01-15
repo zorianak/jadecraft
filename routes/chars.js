@@ -4,16 +4,16 @@ var express = require('express'),
     importChar = npmarmory.importChar,
     Char = npmarmory.Char;
 
-//need theChar obj early
-var theChar = "";
-
 // defaults
-var jadeRegion = "US";
-var jadeName = "Caligraphy";
-var jadeRealm = "Windrunner";
+var jadeRegionDefault = "US";
+var jadeNameDefault = "Caligraphy";
+var jadeRealmDefault = "Windrunner";
+
+// pre-declare empty so we know where values came from
+var jadeRegion, jadeName, jadeRealm;
 
 
-
+// Wait until a req object exists to do anything
 router.get('/', function(req, res) {
   //make some tmps to catch param data
   var tmpRealm, tmpRegion,tmpName;
@@ -24,35 +24,55 @@ router.get('/', function(req, res) {
   tmpRealm = ""+req.param("realm");
 
   // if param exist overwrite defaults
+  // I think only (tmp != "undefined") works too
   if(tmpRegion && tmpRegion != "" && tmpRegion != "undefined"){
     jadeRegion = tmpRegion;
+  }else{
+    jadeRegion = jadeRegionDefault;
   };
   if(tmpName && tmpName != "" && tmpRegion != "undefined"){
     jadeName = tmpName;
+  }else{
+    jadeName = jadeNameDefault;
   };
   if(tmpRealm && tmpRealm != "" && tmpRegion != "undefined"){
     jadeRealm = tmpRealm;
+  }else{
+    jadeRealm = jadeRealmDefault;
   };
 
   //call to npmarmory
   importChar(jadeRegion,jadeName,jadeRealm, function(data) {
     //get real char data
-    theChar = new Char(data);
+    var theChar = new Char(data);
 
-    //add params for output onto template
+    //add 'test' params for output onto template
     theChar.jadeRegion = jadeRegion;
     theChar.jadeName = jadeName;
     theChar.jadeRealm = jadeRealm;
 
-    // ps, never got console.log to work..  not sure what i did wrong
-    // console.log("test"); never appeared anywhere
-    // not the browser broser conslle nor the server itself
-    // even though "night elf" from npmarmory does
+    // my tester output text zone
+    theChar.tester = "";
+
+
+    // If theChar doesn't have a property (eg. Offhand weapon) then 500 error
+    // also, any not-found error will cause this, so every visible prop needs defaults
+    // unless ofc there's some node thing I dont know about
+    if("Offhand" in theChar){
+      theChar.tester += "Offhand: "+String(theChar.Offhand);
+      if(String(theChar.Offhand) == "No Item"){
+        theChar.tester += " No Item Detected ";
+        theChar.Offhand = new Object("No Item");
+        theChar.Offhand.weaponInfo = new Object("No Item");
+        theChar.Offhand.weaponInfo.dps = 0.0;
+      }
+    }
+
+    //send to template...  i think
+    res.render('char', { "theChar": theChar});
 
   });
 
-  //send to template...  i think
-  res.render('char', { "theChar": theChar});
 });
 
 module.exports = router;
