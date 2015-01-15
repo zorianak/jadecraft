@@ -3,6 +3,26 @@ extends layout
 block content
   h1 #{theChar.name}
   
+  div#char-form
+    form#charForm(action="/chars", method="post",enctype="application/x-www-form-urlencoded") Character Form
+      fieldset
+        input#charRegion(type="text",name="charRegion",value="#{theChar.jadeRegion}")
+        label#charRegionLabel(for="charRegion") Character Region
+        br
+
+        input#charName(type="text",name="charName",value="#{theChar.jadeName}")
+        label#charNameLabel(for="charName") Character Name
+        br
+
+        input#charRealm(type="text",name="charRealm",value="#{theChar.jadeRealm}")
+        label#charRealmLabel(for="charRealm") Character Realm
+        br
+
+        input#submitButton(type="submit", value="Submit!")
+
+      p #{" Spacer; Front-End is not my bag, baby... "}
+      
+
   div#char-summary
     input#ifTp(type="checkbox",checked)
     label#tpLabel(for="ifTp") Activate Tiger Power

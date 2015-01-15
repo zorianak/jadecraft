@@ -12,16 +12,12 @@ var jadeRealmDefault = "Windrunner";
 // pre-declare empty so we know where values came from
 var jadeRegion, jadeName, jadeRealm;
 
+var charImporting = function(req, res) {
 
-// Wait until a req object exists to do anything
-router.get('/', function(req, res) {
-  //make some tmps to catch param data
-  var tmpRealm, tmpRegion,tmpName;
-
-  //populate param
-  tmpRegion = ""+req.param("region");
-  tmpName = ""+req.param("name");
-  tmpRealm = ""+req.param("realm");
+  //catch tmps from param or POST
+  var tmpRealm = req.tmpRealm, 
+    tmpRegion = req.tmpRegion,
+    tmpName = req.tmpName;
 
   // if param exist overwrite defaults
   // I think only (tmp != "undefined") works too
@@ -53,6 +49,9 @@ router.get('/', function(req, res) {
 
     // my tester output text zone
     theChar.tester = "";
+    theChar.tester += "charRegion: "+req.tmpRegion+" \n";
+    theChar.tester += "charName: "+req.tmpName+" \n";
+    theChar.tester += "charRealm: "+req.tmpRealm+" \n";
 
 
     // If theChar doesn't have a property (eg. Offhand weapon) then 500 error
@@ -61,7 +60,7 @@ router.get('/', function(req, res) {
     if("Offhand" in theChar){
       theChar.tester += "Offhand: "+String(theChar.Offhand);
       if(String(theChar.Offhand) == "No Item"){
-        theChar.tester += " No Item Detected ";
+        // theChar.tester += " No Item Detected ";
         theChar.Offhand = new Object("No Item");
         theChar.Offhand.weaponInfo = new Object("No Item");
         theChar.Offhand.weaponInfo.dps = 0.0;
@@ -72,10 +71,42 @@ router.get('/', function(req, res) {
     res.render('char', { "theChar": theChar});
 
   });
+};
+
+
+// Wait until a req object exists to do anything
+router.get('/', function(req, res) {
+
+  //populate param
+  req.tmpRegion = ""+req.param("region");
+  req.tmpName = ""+req.param("name");
+  req.tmpRealm = ""+req.param("realm");
+
+  //fire off importChar with params
+  charImporting(req, res);
+
+});
+
+
+router.post('/', function(req, res) {
+
+  //populate POST
+  req.tmpRegion = ""+req.param("charRegion");
+  req.tmpName = ""+req.body.charName;
+  req.tmpRealm = ""+req.body.charRealm;
+
+  //fire off importChar with POST
+  charImporting(req, res);
 
 });
 
 module.exports = router;
+
+
+
+
+
+
 
 /*
 
