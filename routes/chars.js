@@ -64,3 +64,19 @@ Successfully found non-default character
 http://jadecraft.yourcompusolutions.com:3000/chars?region=us&name=Pridemist&realm=Ragnaros
 
 */
+
+
+/*
+// for reference:
+
+importChar('US', 'Caligraphy', 'Windrunner', function(data) {
+
+    // now send them to the page?
+    router.get('/', function(req, res) {
+      var theChar = new Char(data);
+      res.render('char', { "theChar": theChar });
+    });
+});
+
+
+*/
