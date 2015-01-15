@@ -43,7 +43,7 @@ router.get('/', function(req, res) {
     theChar.jadeRegion = jadeRegion;
     theChar.jadeName = jadeName;
     theChar.jadeRealm = jadeRealm;
-    
+
     // ps, never got console.log to work..  not sure what i did wrong
     // console.log("test"); never appeared anywhere
     // not the browser broser conslle nor the server itself
@@ -56,3 +56,11 @@ router.get('/', function(req, res) {
 });
 
 module.exports = router;
+
+/*
+
+Successfully found non-default character
+
+http://jadecraft.yourcompusolutions.com:3000/chars?region=us&name=Pridemist&realm=Ragnaros
+
+*/
