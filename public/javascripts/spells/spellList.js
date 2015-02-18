@@ -6,35 +6,38 @@ calculate and define the average weapon dps
 ****************************************************/
 
 var stance = 1.05;
-var ap = charObj["Attack Power"];
+var ap = charStats["Attack Power"];
 var ifTp = true;
-var avgWdps = charObj["avgWdps"];
+var avgWdps = charStats["avgWdps"];
 var rskDebuf = 1.1;
 
+//function(school, coefficient, charStats, ifTp, stance, cd){
 // most spells aren't that special and don't need their own logic
-tigerpalm = new spell('physical', 3, ap, ifTp, stance, avgWdps, 1);
-jab = new spell('physical', 1.15, ap, ifTp, stance, avgWdps, 1);
-rsk = new spell('physical', 8, ap, ifTp, stance, avgWdps, 1);
-expelHarm = new spell('nature', 0.6, ap, ifTp, stance, avgWdps, 1);
-hurricaneStrike = new spell('physical', 2, ap, ifTp, stance, avgWdps, 45);
+tigerpalm = new Jadec.spell('physical', 3, charStats, ifTp, stance, avgWdps, 1);
+var tpDmg = tigerpalm.damage();
+
+jab = new Jadec.spell('physical', 1.15, charStats, ifTp, stance, avgWdps, 1);
+var jabDmg = jab.damage();
+
+rsk = new Jadec.spell('physical', 8, charStats, ifTp, stance, avgWdps, 1);
+var rskDmg = rsk.damage();
+
+expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);
+var ehDmg = expelHarm.damage();
+
+hurricaneStrike = new Jadec.spell('physical', 2, charStats, ifTp, stance, avgWdps, 45);
+var hurricaneDmg = hurricaneStrike.damage() * 12;
+console.log(hurricaneDmg);
 
 //FoF crap
-var fof = new Jadec.spell('physical', 7.755, ap, ifTp, stance, avgWdps, 25);
+var fof = new Jadec.spell('physical', 7.755, charStats, ifTp, stance, avgWdps, 25);
 
-var fofDmg = function() {
-    var ticks = 1;
-    var damage = fof.damage() * ticks;
-
-    return damage;
-}
+var fofDmg = fof.damage() * 5;
 
 // BoK crap
-var blackoutkick = new Jadec.spell('physical', 5.375, ap, ifTp, stance, avgWdps, 1);
+var blackoutkick = new Jadec.spell('physical', 5.375, charStats, ifTp, stance, avgWdps, 1);
+var bokDmg = blackoutkick.damage();
 
 var bokDot = .3;
 
-var bokDotDmg = function(){
-    var damage = blackoutkick.damage() * bokDot;
-
-    return damage;
-}
+var bokDotDmg = blackoutkick.damage() * bokDot;

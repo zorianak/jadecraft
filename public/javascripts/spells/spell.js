@@ -8,6 +8,7 @@ inherit from.
 Jadec = (function(){
     
     var spell= function(school, coefficient, charStats, ifTp, stance, cd){
+
         this.school = school;
     //    this.estimate = estimate;
         this.coefficient = coefficient;
@@ -36,7 +37,6 @@ Jadec = (function(){
     spell.prototype = {
         damage: function(coefficient, stance, ap) {
             var dmg = this.coefficient * (this.avgWdps + this.ap/3.5) * this.armor * this.rskD * this.stance * (1 + (this.vers["rating"] * .01));
-            console.log(this.coefficient);
             return dmg;
         }
     };
