@@ -26,7 +26,7 @@ expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);
 var ehDmg = expelHarm.damage();
 
 hurricaneStrike = new Jadec.spell('physical', 2, charStats, ifTp, stance, avgWdps, 45);
-var hurricaneDmg = hurricaneStrike.damage() * 12;
+var hurricaneDmg = hurricaneStrike.damage() * 15;
 console.log(hurricaneDmg);
 
 //FoF crap

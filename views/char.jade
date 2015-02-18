@@ -48,6 +48,29 @@ block content
             td.attrName Offhand DPS
             td#VersRating.attrStat #{theChar.Offhand.weaponInfo.dps}
             
+    table#char-talents
+        tr
+            td.attrTalent Tier 15
+            td.tal15(data-talentcol="#{theChar.talent15}") #{theChar.talent15name}
+        tr
+            td.attrTalent Tier 30
+            td.tal30(data-talentcol="#{theChar.talent30}") #{theChar.talent30name}
+        tr 
+            td.attrTalent Tier 45
+            td.tal45(data-talentcol="#{theChar.talent45}") #{theChar.talent45name}
+        tr
+            td.attrTalent Tier 60
+            td.tal60(data-talentcol="#{theChar.talent60}") #{theChar.talent60name}
+        tr
+            td.attrTalent Tier 75
+            td.tal75(data-talentcol="#{theChar.talent75}") #{theChar.talent75name}
+        tr
+            td.attrTalent Tier 90
+            td.tal90(data-talentcol="#{theChar.talent90}") #{theChar.talent90name}
+        tr
+            td.attrTalent Tier 100
+            td.tal100(data-talentcol="#{theChar.talent100}") #{theChar.talent100name}
+            
     table#output-results
             
   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
