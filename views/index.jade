@@ -2,10 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Grab your character by entering its data and hitting enter below:
   div#char-import
     select#region
         option(value='us') US
         option(value='eu') EU
-    input#char-name(type='text')
     input#realm(type='text')
+    input#char-name(type='text')
+    input#char-submit(type='submit')

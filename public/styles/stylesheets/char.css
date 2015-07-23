@@ -1,0 +1,39 @@
+/*************************************************************
+
+Mixins - common configurations such as colors, styles, etc.
+        as well as functions for creating style types
+
+*************************************************************/
+/*************************************************************
+
+Char.scss - styles for the character page
+
+*************************************************************/
+/* line 12, ../sass/char.scss */
+#fightLength {
+  width: 25px;
+  margin-left: 20px;
+}
+
+/* line 20, ../sass/char.scss */
+.char-table {
+  margin-top: 10px;
+}
+/* line 23, ../sass/char.scss */
+.char-table td {
+  padding: 3px;
+  border: 1px solid #ddd;
+}
+/* line 29, ../sass/char.scss */
+.char-table th {
+  text-align: left;
+}
+/* line 33, ../sass/char.scss */
+.char-table .attrName {
+  font-weight: bold;
+  min-width: 100px;
+}
+/* line 38, ../sass/char.scss */
+.char-table .attrStat {
+  min-width: 137px;
+}

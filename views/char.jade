@@ -10,8 +10,8 @@ block content
     input#fightLength(type="number",value="6")
     label#fightLenLable(for="fightLength") Fight Length (minutes)
 
-    table#char-basics-table
-        th#charName
+    table#char-basics-table.char-table
+        th#charName Character Information
         tr
             td.attrName Realm
             td#realm.attrStat #{theChar.realm}
@@ -19,7 +19,8 @@ block content
             td.attrName Race
             td#race.attrStat #{theChar.race}
 
-    table#char-stat-table
+    table#char-stat-table.char-table
+        th Character Stats
         tr
             td.attrName Agility
             td#Agility.attrStat #{theChar.Agility}
@@ -44,31 +45,30 @@ block content
         tr
             td.attrName Mainhand DPS
             td#VersRating.attrStat #{theChar.Mainhand.weaponInfo.dps}
-        tr
-            td.attrName Offhand DPS
-            td#VersRating.attrStat #{theChar.Offhand.weaponInfo.dps}
+
             
-    table#char-talents
+    table#char-talents.char-table
+        th Talents
         tr
-            td.attrTalent Tier 15
+            td.attrName.attrTalent Tier 15
             td.tal15(data-talentcol="#{theChar.talent15}") #{theChar.talent15name}
         tr
-            td.attrTalent Tier 30
+            td.attrName.attrTalent Tier 30
             td.tal30(data-talentcol="#{theChar.talent30}") #{theChar.talent30name}
         tr 
-            td.attrTalent Tier 45
+            td.attrName.attrTalent Tier 45
             td.tal45(data-talentcol="#{theChar.talent45}") #{theChar.talent45name}
         tr
-            td.attrTalent Tier 60
+            td.attrName.attrTalent Tier 60
             td.tal60(data-talentcol="#{theChar.talent60}") #{theChar.talent60name}
         tr
-            td.attrTalent Tier 75
+            td.attrName.attrTalent Tier 75
             td.tal75(data-talentcol="#{theChar.talent75}") #{theChar.talent75name}
         tr
-            td.attrTalent Tier 90
+            td.attrName.attrTalent Tier 90
             td.tal90(data-talentcol="#{theChar.talent90}") #{theChar.talent90name}
         tr
-            td.attrTalent Tier 100
+            td.attrName.attrTalent Tier 100
             td.tal100(data-talentcol="#{theChar.talent100}") #{theChar.talent100name}
             
     table#output-results

@@ -20,5 +20,5 @@ so far to model and ensure that the logic is more or less accurate). Here's the 
 
 Here's what currently works:
 
-* You can import my monk (Caligraphy - US Windrunner) and see what my stats look like. And it prints out my current average
+* You can import my monk (Calligraphy - US Stormreaver) and see what my stats look like. And it prints out my current average
 Fists of Fury damage is.

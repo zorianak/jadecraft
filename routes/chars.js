@@ -7,7 +7,7 @@ var express = require('express'),
 // let's see if we can break node here.  ._. prelim logic
 // to import my monk
 
-importChar('US', 'Caligraphy', 'Windrunner', function(data) {
+importChar('US', 'Calligraphy', 'Stormreaver', function(data) {
 
     // now send them to the page?
     /* GET chars listing. */
