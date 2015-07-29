@@ -6,8 +6,8 @@ var express = require('express'),
 
 // defaults
 var jadeRegionDefault = "US",
-  jadeNameDefault = "Caligraphy",
-  jadeRealmDefault = "Windrunner";
+  jadeNameDefault = "Styrka",
+  jadeRealmDefault = "Stormreaver";
 
 // pre-declare empty so we know where values came from
 var jadeRegion, jadeName, jadeRealm;
