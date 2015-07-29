@@ -19,7 +19,7 @@ var tpDmg = tigerpalm.damage();
 jab = new Jadec.spell('physical', 1.15, charStats, ifTp, stance, avgWdps, 1);
 var jabDmg = jab.damage();
 
-rsk = new Jadec.spell('physical', 8, charStats, ifTp, stance, avgWdps, 1);
+rsk = new Jadec.spell('physical', 8, charStats, ifTp, stance, avgWdps, 8);
 var rskDmg = rsk.damage();
 
 expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);

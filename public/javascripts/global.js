@@ -10,5 +10,7 @@ $(document).ready(function(){
     // we can more easily get the wDPS
 
     console.log((charStats["Haste"]/1000) + 10.00);
-    console.log(charStats);
+    console.log(tpDmg);
+	
+	popResults();
 });
