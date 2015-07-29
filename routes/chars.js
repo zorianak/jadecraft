@@ -5,47 +5,30 @@ var express = require('express'),
     Char = npmarmory.Char;
 
 // defaults
-var jadeRegionDefault = "US",
-  jadeNameDefault = "Styrka",
-  jadeRealmDefault = "Stormreaver";
-
-// pre-declare empty so we know where values came from
-var jadeRegion, jadeName, jadeRealm;
+var regionDefault = "US",
+  nameDefault = "Styrka",
+  realmDefault = "Stormreaver";
 
 var charImporting = function(req, res) {
-
-  //catch tmps from param or POST
-  var tmpRealm = req.tmpRealm, 
-    tmpRegion = req.tmpRegion,
-    tmpName = req.tmpName;
+//	console.log(req);
 
   // if param exist overwrite defaults
   // I think only (tmp != "undefined") works too
-  if(tmpRegion && tmpRegion != "" && tmpRegion != "undefined"){
-    jadeRegion = tmpRegion;
-  }else{
-    jadeRegion = jadeRegionDefault;
-  };
-  if(tmpName && tmpName != "" && tmpRegion != "undefined"){
-    jadeName = tmpName;
-  }else{
-    jadeName = jadeNameDefault;
-  };
-  if(tmpRealm && tmpRealm != "" && tmpRegion != "undefined"){
-    jadeRealm = tmpRealm;
-  }else{
-    jadeRealm = jadeRealmDefault;
-  };
+  var charRegion = req.tmpRegion || regionDefault,
+	  charName = req.tmpName || nameDefault,
+	  charRealm = req.tmpRealm || realmDefault;
 
   //call to npmarmory
-  importChar(jadeRegion,jadeName,jadeRealm, function(data) {
+  importChar(charRegion, charName, charRealm, function(data) {
+	  
     //get real char data
     var theChar = new Char(data);
 
     //add 'test' params for output onto template
-    theChar.jadeRegion = jadeRegion;
-    theChar.jadeName = jadeName;
-    theChar.jadeRealm = jadeRealm;
+    theChar.jadeRegion = charRegion;
+    theChar.jadeName = charName;
+    theChar.jadeRealm = charRealm;
+	  
 
     // my tester output text zone
     theChar.tester = "";
