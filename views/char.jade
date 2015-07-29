@@ -83,7 +83,23 @@ block content
 			td.attrName.attrTalent Tier 100
 			td.tal100(data-talentcol="#{theChar.talent100}") #{theChar.talent100name}
 			
-	table#output-results
+	table#output-results.char-table
+		th Results
+		tr
+			td.attrName Average Blackout Kick
+			td#bokAvg.attrStat
+		tr
+			td.attrName Average Rising Sun Kick
+			td#rskAvg.attrStat
+		tr
+			td.attrName Estimated Tigereye Brew Generation (over course of fight)
+			td#tebGen.attrStat
+		tr
+			td.attrName Estimated DPS (Serenity)
+			td#serenityDps.attrStat
+		tr
+			td.attrName Estimated DPS (Chi Explosion)
+			td#chexDps.attrStat
 
 	p #{"Test Variables Zone:"}
 
