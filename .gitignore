@@ -38,4 +38,3 @@ Icon
 /node_modules/.bin/grunt-simple-mocha.cmd
 /node_modules/.bin/mocha
 /node_modules/.bin/mocha.cmd
-/node_modules/*
