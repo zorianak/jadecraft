@@ -2,8 +2,9 @@
 $(document).ready(function(){
 
     // test for TP to be active - yes globalized
-    ifTp = $('#ifTp').val();
+//    ifTp = $('#ifTp').val();
 
+	ifTp = true;
     // for now we're also going to add some of the
     // weapon information into the tables, so that
     // we can more easily get the wDPS
