@@ -5,7 +5,7 @@ var Jadec = Jadec || {};
 calculate and define the average weapon dps
 ****************************************************/
 
-var stance = 1.05;
+var stance = 1.1;
 var ap = charStats["Attack Power"];
 var ifTp = true;
 var avgWdps = charStats["avgWdps"];
