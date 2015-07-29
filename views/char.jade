@@ -44,7 +44,16 @@ block content
             td#VersRating.attrStat #{theChar.VersRating}
         tr
             td.attrName Mainhand DPS
-            td#VersRating.attrStat #{theChar.Mainhand.weaponInfo.dps}
+            td#MainDPS.attrStat #{theChar.Mainhand.weaponInfo.dps}
+            
+            
+        tr
+            td.attrName Offhand DPS
+            if (theChar.Offhand != "No Item")
+                td#OffDPS.attrStat #{theChar.Offhand.weaponInfo.dps}
+            else
+                td#OffDPS.attrStat Not Available
+            
 
             
     table#char-talents.char-table
