@@ -79,8 +79,17 @@ block content
         tr
             td.attrName.attrTalent Tier 100
             td.tal100(data-talentcol="#{theChar.talent100}") #{theChar.talent100name}
+
             
     table#output-results
+
+    p #{"Test Variables Zone:"}
+
+    p #{theChar.jadeRegion}
+    p #{theChar.jadeName}
+    p #{theChar.jadeRealm}
+
+    p #{theChar.tester}
             
   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
   script(src='/javascripts/stats/avgWdps.js')

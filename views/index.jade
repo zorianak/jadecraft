@@ -4,9 +4,20 @@ block content
   h1= title
   p Grab your character by entering its data and hitting enter below:
   div#char-import
-    select#region
-        option(value='us') US
-        option(value='eu') EU
-    input#realm(type='text')
-    input#char-name(type='text')
-    input#char-submit(type='submit')
+    form#charForm(action="/chars", method="post",enctype="application/x-www-form-urlencoded") Character Form
+      fieldset
+        select#charRegion(type="text",name="charRegion")
+          option(value='us') US
+          option(value='eu') EU
+        label#charRegionLabel(for="charRegion") Character Region
+        br
+
+        input#charName(type="text",name="charName",placeholder="Your Character Name")
+        label#charNameLabel(for="charName") Character Name
+        br
+
+        input#charRealm(type="text",name="charRealm",placeholder="Your Character's Realm")
+        label#charRealmLabel(for="charRealm") Character Realm
+        br
+
+        input#submitButton(type="submit", value="Submit!")
