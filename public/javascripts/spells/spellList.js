@@ -9,7 +9,7 @@ var stance = 1.1;
 var ap = charStats["Attack Power"];
 var ifTp = true;
 var avgWdps = charStats["avgWdps"];
-var rskDebuf = 1.1;
+var rskDebuf = 1.2;
 
 //function(school, coefficient, charStats, ifTp, stance, cd){
 // most spells aren't that special and don't need their own logic
@@ -19,7 +19,7 @@ var tpDmg = tigerpalm.damage();
 jab = new Jadec.spell('physical', 1.15, charStats, ifTp, stance, avgWdps, 1);
 var jabDmg = jab.damage();
 
-rsk = new Jadec.spell('physical', 8, charStats, ifTp, stance, avgWdps, 8);
+rsk = new Jadec.spell('physical', 10, charStats, ifTp, stance, avgWdps, 8);
 var rskDmg = rsk.damage();
 
 expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);
