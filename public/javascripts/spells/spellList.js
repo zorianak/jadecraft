@@ -13,19 +13,19 @@ var rskDebuf = 1.2;
 
 //function(school, coefficient, charStats, ifTp, stance, cd){
 // most spells aren't that special and don't need their own logic
-tigerpalm = new Jadec.spell('physical', 3, charStats, ifTp, stance, avgWdps, 1);
+var tigerpalm = new Jadec.spell('physical', 3, charStats, ifTp, stance, avgWdps, 1);
 var tpDmg = tigerpalm.damage();
 
-jab = new Jadec.spell('physical', 1.15, charStats, ifTp, stance, avgWdps, 1);
+var jab = new Jadec.spell('physical', 1.15, charStats, ifTp, stance, avgWdps, 1);
 var jabDmg = jab.damage();
 
-rsk = new Jadec.spell('physical', 10, charStats, ifTp, stance, avgWdps, 8);
+var rsk = new Jadec.spell('physical', 10, charStats, ifTp, stance, avgWdps, 8);
 var rskDmg = rsk.damage();
 
-expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);
+var expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);
 var ehDmg = expelHarm.damage();
 
-hurricaneStrike = new Jadec.spell('physical', 2, charStats, ifTp, stance, avgWdps, 45);
+var hurricaneStrike = new Jadec.spell('physical', 2, charStats, ifTp, stance, avgWdps, 45);
 var hurricaneDmg = hurricaneStrike.damage() * 15;
 
 //FoF crap
