@@ -36,20 +36,6 @@ var charImporting = function(req, res) {
     theChar.tester += "charName: "+req.tmpName+" \n";
     theChar.tester += "charRealm: "+req.tmpRealm+" \n";
 
-
-    // If theChar doesn't have a property (eg. Offhand weapon) then 500 error
-    // also, any not-found error will cause this, so every visible prop needs defaults
-    // unless ofc there's some node thing I dont know about
-    if("Offhand" in theChar){
-      theChar.tester += "Offhand: "+String(theChar.Offhand);
-      if(String(theChar.Offhand) == "No Item"){
-        // theChar.tester += " No Item Detected ";
-        theChar.Offhand = new Object("No Item");
-        theChar.Offhand.weaponInfo = new Object("No Item");
-        theChar.Offhand.weaponInfo.dps = 0.0;
-      }
-    }
-
     //send to template...  i think
     res.render('char', { "theChar": theChar});
 
