@@ -1,0 +1,22 @@
+@import 'mixins';
+
+/*************************************************************
+
+Globally shared stylesheets.
+
+Shared.scss - Styles which are shared between all pages
+
+*************************************************************/
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: $bright-blue;
+}
+
+input {
+    &[type="number"] {
+    }
+}

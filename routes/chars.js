@@ -120,11 +120,12 @@ http://jadecraft.yourcompusolutions.com:3000/chars?region=us&name=Pridemist&real
 /*
 // for reference:
 
-importChar('US', 'Caligraphy', 'Windrunner', function(data) {
+importChar('US', 'Calligraphy', 'Stormreaver', function(data) {
 
     // now send them to the page?
     router.get('/', function(req, res) {
       var theChar = new Char(data);
+       console.log(theChar);
       res.render('char', { "theChar": theChar });
     });
 });

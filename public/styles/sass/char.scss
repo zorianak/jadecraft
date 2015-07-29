@@ -1,0 +1,43 @@
+@import 'mixins';
+
+/*************************************************************
+
+Char.scss - styles for the character page
+
+*************************************************************/
+
+// ID styling is not ideal, but we would only have one of
+// these elements
+
+#fightLength {
+    width: 25px;
+    margin-left: 20px;
+}
+
+// typically avoid as much nesting as possible.
+// However, this will group the attributes from this nicely.
+
+.char-table {
+    margin-top: 10px;
+
+    td {
+        padding: 3px;
+        border: 1px solid $light-grey;
+        //
+    }
+
+    th {
+        text-align: left;
+    }
+
+    .attrName {
+        font-weight: bold;
+        min-width: 100px;
+    }
+
+    .attrStat {
+        min-width: 137px;
+    }
+
+}
+

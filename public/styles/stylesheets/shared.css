@@ -1,0 +1,23 @@
+/*************************************************************
+
+Mixins - common configurations such as colors, styles, etc.
+        as well as functions for creating style types
+
+*************************************************************/
+/*************************************************************
+
+Globally shared stylesheets.
+
+Shared.scss - Styles which are shared between all pages
+
+*************************************************************/
+/* line 10, ../sass/shared.scss */
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* line 15, ../sass/shared.scss */
+a {
+  color: #00B7FF;
+}
