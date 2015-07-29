@@ -6,7 +6,7 @@ var express = require('express'),
 
 // defaults
 var regionDefault = "US",
-  nameDefault = "Styrka",
+  nameDefault = "Calligraphy",
   realmDefault = "Stormreaver";
 
 var charImporting = function(req, res) {
@@ -84,34 +84,3 @@ router.post('/', function(req, res) {
 });
 
 module.exports = router;
-
-
-
-
-
-
-
-/*
-
-Successfully found non-default character
-
-http://jadecraft.yourcompusolutions.com:3000/chars?region=us&name=Pridemist&realm=Ragnaros
-
-*/
-
-
-/*
-// for reference:
-
-importChar('US', 'Calligraphy', 'Stormreaver', function(data) {
-
-    // now send them to the page?
-    router.get('/', function(req, res) {
-      var theChar = new Char(data);
-       console.log(theChar);
-      res.render('char', { "theChar": theChar });
-    });
-});
-
-
-*/
