@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 				  'public/javascripts/src/spells/spell.js',
 				  'public/javascripts/src/spells/spellList.js',
 				  'public/javascripts/src/global.js',
-				  'src/ui/popResults.js'
+				  'public/javascripts/src/ui/popResults.js'
 				],
 				'public/javascripts/dist/home.js': [
 				  'public/javascripts/src/vendor/jquery-2.1.4.min.js'
