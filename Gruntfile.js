@@ -4,18 +4,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-      simplemocha: {
-        options: {
-          globals: ['should'],
-          timeout: 3000,
-          ignoreLeaks: false,
-          grep: '*_test',
-          ui: 'bdd',
-          reporter: 'Nyan'
-        },
-
-        all: { src: 'test/**/*.js' }
-	  },
 	concat: {
 		basic_and_extras: {
 			files: {
@@ -39,7 +27,6 @@ module.exports = function(grunt) {
 	  
   });
 
-    grunt.loadNpmTasks('grunt-simple-mocha');
 	grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.registerTask('default', ['concat']);
 
