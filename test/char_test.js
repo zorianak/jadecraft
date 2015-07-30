@@ -2,10 +2,10 @@
 // and returns a JS object
 
 //var $ = require('../node_modules/jquery');
-
-var chai = require('chai'),
-    should = require('chai').should(),
-    expect = require('chai').expect,
-	$ = require('jquery'),
-    charscript = require('../public/javascripts/char'),
-    Char = charscript.Char;
+//
+//var chai = require('chai'),
+//    should = require('chai').should(),
+//    expect = require('chai').expect,
+//	$ = require('jquery'),
+//    charscript = require('../public/javascripts/char'),
+//    Char = charscript.Char;

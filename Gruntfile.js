@@ -15,21 +15,32 @@ module.exports = function(grunt) {
         },
 
         all: { src: 'test/**/*.js' }
-      }
-	  
-//	  mocha: {
-//		  test: {
-//			options: {
-//			  reporter: 'Nyan'
-//			},
-//			src: ['tests/**/*.html'],
-//		  },
-//		},
+	  },
+	concat: {
+		basic_and_extras: {
+			files: {
+				'public/javascripts/dist/chars.js': [
+				  'public/javascripts/src/vendor/jquery-2.1.4.min.js',
+				  'public/javascripts/src/stats/avgWdps.js',
+				  'public/javascripts/src/stats/stat.js',
+				  'public/javascripts/src/char.js',
+				  'public/javascripts/src/spells/spell.js',
+				  'public/javascripts/src/spells/spellList.js',
+				  'public/javascripts/src/global.js',
+				  'src/ui/popResults.js'
+				],
+				'public/javascripts/dist/home.js': [
+				  'public/javascripts/src/vendor/jquery-2.1.4.min.js'
+				]
+			}
+		}
+		  
+	}
 	  
   });
 
     grunt.loadNpmTasks('grunt-simple-mocha');
 	grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.registerTask('default', ['concat', 'simplemocha']);
+    grunt.registerTask('default', ['concat']);
 
 };
