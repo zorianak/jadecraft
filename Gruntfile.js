@@ -9,10 +9,10 @@ module.exports = function(grunt) {
 			files: {
 				'public/javascripts/dist/chars.js': [
 				  'public/javascripts/src/vendor/jquery-2.1.4.min.js',
+				  'public/javascripts/src/spells/spell.js',
 				  'public/javascripts/src/stats/avgWdps.js',
 				  'public/javascripts/src/stats/stat.js',
 				  'public/javascripts/src/char.js',
-				  'public/javascripts/src/spells/spell.js',
 				  'public/javascripts/src/spells/spellList.js',
 				  'public/javascripts/src/global.js',
 				  'public/javascripts/src/ui/popResults.js'

@@ -5,38 +5,38 @@ var Jadec = Jadec || {};
 calculate and define the average weapon dps
 ****************************************************/
 
-var stance = 1.1;
-var ap = charStats["Attack Power"];
-var ifTp = true;
-var avgWdps = charStats["avgWdps"];
-var rskDebuf = 1.2;
+Jadec.stance = 1.1;
+Jadec.ap = Jadec.charStats["Attack Power"];
+Jadec.ifTp = true;
+Jadec.avgWdps = Jadec.charStats["avgWdps"];
+Jadec.rskDebuf = 1.2;
 
 //function(school, coefficient, charStats, ifTp, stance, cd){
 // most spells aren't that special and don't need their own logic
-var tigerpalm = new Jadec.spell('physical', 3, charStats, ifTp, stance, avgWdps, 1);
-var tpDmg = tigerpalm.damage();
+Jadec.tigerpalm = new Jadec.spell('physical', 3, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 1);
+Jadec.tpDmg = Jadec.tigerpalm.damage();
 
-var jab = new Jadec.spell('physical', 1.15, charStats, ifTp, stance, avgWdps, 1);
-var jabDmg = jab.damage();
+Jadec.jab = new Jadec.spell('physical', 1.15, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 1);
+Jadec.jabDmg = Jadec.jab.damage();
 
-var rsk = new Jadec.spell('physical', 10, charStats, ifTp, stance, avgWdps, 8);
-var rskDmg = rsk.damage();
+Jadec.rsk = new Jadec.spell('physical', 10, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 8);
+Jadec.rskDmg = Jadec.rsk.damage();
 
-var expelHarm = new Jadec.spell('nature', 0.6, charStats, ifTp, stance, avgWdps, 1);
-var ehDmg = expelHarm.damage();
+Jadec.expelHarm = new Jadec.spell('nature', 0.6, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 1);
+Jadec.ehDmg = Jadec.expelHarm.damage();
 
-var hurricaneStrike = new Jadec.spell('physical', 2, charStats, ifTp, stance, avgWdps, 45);
-var hurricaneDmg = hurricaneStrike.damage() * 15;
+Jadec.hurricaneStrike = new Jadec.spell('physical', 2, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 45);
+Jadec.hurricaneDmg = Jadec.hurricaneStrike.damage() * 15;
 
 //FoF crap
-var fof = new Jadec.spell('physical', 7.755, charStats, ifTp, stance, avgWdps, 25);
+Jadec.fof = new Jadec.spell('physical', 7.755, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 25);
 
-var fofDmg = fof.damage() * 5;
+Jadec.fofDmg = Jadec.fof.damage() * 5;
 
 // BoK crap
-var blackoutkick = new Jadec.spell('physical', 5.375, charStats, ifTp, stance, avgWdps, 1);
-var bokDmg = blackoutkick.damage();
+Jadec.blackoutkick = new Jadec.spell('physical', 5.375, Jadec.charStats, Jadec.ifTp, Jadec.stance, Jadec.avgWdps, 1);
+Jadec.bokDmg = Jadec.blackoutkick.damage();
 
 var bokDot = .3;
 
-var bokDotDmg = blackoutkick.damage() * bokDot;
+Jadec.bokDotDmg = Jadec.blackoutkick.damage() * bokDot;

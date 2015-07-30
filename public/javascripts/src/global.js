@@ -9,8 +9,8 @@ $(document).ready(function(){
     // weapon information into the tables, so that
     // we can more easily get the wDPS
 
-    console.log((charStats["Haste"]/1000) + 10.00);
-    console.log(tpDmg);
+    console.log((Jadec.charStats["Haste"]/1000) + 10.00);
+    console.log(Jadec.tpDmg);
 	
 	popResults();
 });

@@ -3,13 +3,13 @@
 // allow the model to happen; sure,
 // client-side is bad, but we'll forgive it for
 // now.
-var charStats = {};
+Jadec.charStats = {};
 var theTable = $('#char-stat-table tr');
 $.each( theTable, function( key, value ) {
     var attribute = $($(theTable)[key]).find('td.attrName').html();
     var attrRating = $($(theTable)[key]).find('td.attrStat').html();
-    charStats[attribute] = attrRating;
+    Jadec.charStats[attribute] = attrRating;
 });
 
 // set avgWdps (used a lot!)
-charStats["avgWdps"] = setAvgWdps(charStats["Mainhand DPS"], charStats["Offhand DPS"]);
+Jadec.charStats["avgWdps"] = setAvgWdps(Jadec.charStats["Mainhand DPS"], Jadec.charStats["Offhand DPS"]);

@@ -4,6 +4,6 @@ var popResults = function() {
 	var avgBok = $('#bokAvg'),
 		rskAvg = $('#rskAvg');
 	
-	avgBok.text(Math.round(bokDmg));
-	rskAvg.text(Math.round(rskDmg));
+	avgBok.text(Math.round(Jadec.bokDmg));
+	rskAvg.text(Math.round(Jadec.rskDmg));
 }
