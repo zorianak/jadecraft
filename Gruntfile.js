@@ -14,6 +14,7 @@ module.exports = function(grunt) {
 				  'public/javascripts/src/stats/stat.js',
 				  'public/javascripts/src/char.js',
 				  'public/javascripts/src/spells/spellList.js',
+				  'public/javascripts/src/spells/teb.js',
 				  'public/javascripts/src/global.js',
 				  'public/javascripts/src/ui/popResults.js'
 				],
