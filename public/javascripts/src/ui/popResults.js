@@ -7,3 +7,5 @@ var popResults = function() {
 	avgBok.text(Math.round(Jadec.bokDmg));
 	rskAvg.text(Math.round(Jadec.rskDmg));
 }
+
+console.log(Jadec);

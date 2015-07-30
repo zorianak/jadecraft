@@ -110,6 +110,14 @@ $.each( theTable, function( key, value ) {
 // set avgWdps (used a lot!)
 Jadec.charStats["avgWdps"] = setAvgWdps(Jadec.charStats["Mainhand DPS"], Jadec.charStats["Offhand DPS"]);
 
+Jadec.eps = function(){
+    // EPS is related to haste, and whether or not hte character has Ascension spec'd.
+    var haste = new stat(Jadec.charStats["Haste"], 100),
+        base = 10.00,
+        eps = (Jadec.charStats["Haste"] / 1000.00) + 10.00;
+
+    return eps;
+}
 var Jadec = Jadec || {};
 //var Jadec.spell = Jadec.spell || {};
 
@@ -163,37 +171,50 @@ Tigereye Brew:
 	* Every time the monk spends 4 Chi
 	* Another roll is used against Mastery to
 	  give a chance of an extra stack
+	* Combo Breaker: BoK and ChiEx
+	  Will also generate TeB
 ************************************/
 Jadec.teb = {};
 
 Jadec.teb.tebDmg = function(tebStacks){
-		// const to track % of damage during buff
-		var DMG_PER_STACK = 6;
+	// const to track % of damage during buff
+	var DMG_PER_STACK = 6;
 
-		// how many stacks possbile
-		var MAX_STACKS_PER_USE = 10;
+	// how many stacks possbile
+	var MAX_STACKS_PER_USE = 10;
 
-		var stacksUsed = 0,
-			damageGain = 0;
-		// if teb stacks are more than max stacks,
-		// use max stacks
-		if(tebStacks > MAX_STACKS_PER_USE) {
-			stacksUsed = MAX_STACKS_PER_USE;
-		} else {
-			stacksUsed = tebStacks;
-		}
-
-		damageGain = stacksUsed * DMG_PER_STACK;
+	var stacksUsed = 0,
+		damageGain = 0;
+	// if teb stacks are more than max stacks,
+	// use max stacks
+	if(tebStacks > MAX_STACKS_PER_USE) {
+		stacksUsed = MAX_STACKS_PER_USE;
+	} else {
+		stacksUsed = tebStacks;
 	}
 
-//Jadec.teb.
+	damageGain = stacksUsed * DMG_PER_STACK;
+}
+
 
 // Length of TEB is 15s
 Jadec.teb.length = 15;
 
 // now to calculate amount generated
-Jadec.teb.generateTeb = {
+Jadec.teb.generateTeb = function(ability, cbChance){
+	//( ( 1 + (Haste/100) )
 	
+	// get the amount of energy over the course of the fight
+	// round up because you can't get partial points of energy
+	var fightLength = $('#fightLength').val() * 60,
+		eGenerated = Math.round(Jadec.eps() * fightLength);
+	
+	
+	// so 45 energy represents 2 chi,
+	// thus eGenerated + 100 = how much chi generated during fight
+	var chiGenerated = Math.round( (eGenerated + 100)/45);
+	
+	console.log('Chi generated:' + chiGenerated);
 }
 
 $(document).ready(function(){
@@ -221,3 +242,5 @@ var popResults = function() {
 	avgBok.text(Math.round(Jadec.bokDmg));
 	rskAvg.text(Math.round(Jadec.rskDmg));
 }
+
+console.log(Jadec);
