@@ -11,7 +11,7 @@ Hinalover: it can either miss, dodge, parry, crit, or hit in one go
 Hinalover: yellow attacks have a 2 roll system
 Hinalover: first roll figures out if it can miss, dodge, or parry
 */
-}var autoattack = function(charStats){
+var autoattack = function(charStats){
     var AP = charStats["AP"],
         wDPS = charStats["avgWdps"];
 
