@@ -6,4 +6,6 @@
 var chai = require('chai'),
     should = require('chai').should(),
     expect = require('chai').expect,
-	$ = require('jquery');
+	$ = require('jquery'),
+    charscript = require('../public/javascripts/char'),
+    Char = charscript.Char;

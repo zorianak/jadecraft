@@ -29,6 +29,7 @@ module.exports = function(grunt) {
   });
 
     grunt.loadNpmTasks('grunt-simple-mocha');
-    grunt.registerTask('default', ['simplemocha']);
+	grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.registerTask('default', ['concat', 'simplemocha']);
 
 };
