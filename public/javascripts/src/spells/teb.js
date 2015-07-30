@@ -52,4 +52,8 @@ Jadec.teb.generateTeb = function(ability, cbChance){
 	var chiGenerated = Math.round( (eGenerated + 100)/45);
 	
 	console.log('Chi generated: ' + chiGenerated);
+	
+	// The one glaring flaw here is that CB
+	// can be triggered by both RSK as well as Jab.
+	// Jab is our main Chi Generator, so going to have to sleep on this.
 }
