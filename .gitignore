@@ -38,9 +38,6 @@ Icon
 /node_modules/.bin/grunt-simple-mocha.cmd
 /node_modules/.bin/mocha
 /node_modules/.bin/mocha.cmd
-<<<<<<< HEAD
 /node_modules/*
-node_modules/*
-=======
-/node_modules/*
->>>>>>> origin/2-grab-post-data
+
+npm-debug.log

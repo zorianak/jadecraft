@@ -16,9 +16,19 @@ module.exports = function(grunt) {
 
         all: { src: 'test/**/*.js' }
       }
+	  
+//	  mocha: {
+//		  test: {
+//			options: {
+//			  reporter: 'Nyan'
+//			},
+//			src: ['tests/**/*.html'],
+//		  },
+//		},
+	  
   });
 
     grunt.loadNpmTasks('grunt-simple-mocha');
-    grunt.registerTask('default', 'simplemocha');
+    grunt.registerTask('default', ['simplemocha']);
 
 };
